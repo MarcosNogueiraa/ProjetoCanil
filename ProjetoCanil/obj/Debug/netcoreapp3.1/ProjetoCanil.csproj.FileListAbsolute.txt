@@ -1,0 +1,15 @@
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.Form1.resources
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.csproj.GenerateResource.cache
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.AssemblyInfoInputs.cache
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.AssemblyInfo.cs
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.csproj.CoreCompileInputs.cache
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.exe
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.deps.json
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.runtimeconfig.json
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.runtimeconfig.dev.json
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.dll
+C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\ProjetoCanil.pdb
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.dll
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.pdb
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.genruntimeconfig.cache

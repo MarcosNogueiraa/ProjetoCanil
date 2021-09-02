@@ -1,4 +1,4 @@
-﻿₢using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +10,7 @@ namespace ProjetoCanil.Model.Entidades
         public string NomeVermifugo { get; set; }
         public string Tipo { get; set; }
 
-        public Vermifugo(int iDVermifugo, string nomeVermifugo, string tipo     )
+        public Vermifugo(int iDVermifugo, string nomeVermifugo, string tipo)
         {
             IDVermifugo = iDVermifugo;
             NomeVermifugo = nomeVermifugo;
