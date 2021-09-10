@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ProjetoCanil.DAO;
+using ProjetoCanil.Model.Entidades;
+using ProjetoCanil.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +20,20 @@ namespace ProjetoCanil
             InitializeComponent();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CadastroCachorro cadastroCachorro = new CadastroCachorro();
+            cadastroCachorro.ShowDialog();
+        }
     }
 }
