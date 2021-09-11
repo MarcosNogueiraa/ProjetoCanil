@@ -35,5 +35,11 @@ namespace ProjetoCanil
             CadastroCachorro cadastroCachorro = new CadastroCachorro();
             cadastroCachorro.ShowDialog();
         }
+
+        private void btCadPessoa_Click(object sender, EventArgs e)
+        {
+            CadastroPessoa cadastroPessoa= new CadastroPessoa();
+            cadastroPessoa.ShowDialog();
+        }
     }
 }

@@ -30,7 +30,8 @@ namespace ProjetoCanil
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btCadCachorro = new System.Windows.Forms.Button();
+            this.btCadPessoa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,23 +47,35 @@ namespace ProjetoCanil
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // btCadCachorro
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(265, 182);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 74);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Cadastrar Cachorro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btCadCachorro.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btCadCachorro.Location = new System.Drawing.Point(265, 182);
+            this.btCadCachorro.Name = "btCadCachorro";
+            this.btCadCachorro.Size = new System.Drawing.Size(149, 74);
+            this.btCadCachorro.TabIndex = 1;
+            this.btCadCachorro.Text = "Cadastrar Cachorro";
+            this.btCadCachorro.UseVisualStyleBackColor = true;
+            this.btCadCachorro.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btCadPessoa
+            // 
+            this.btCadPessoa.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btCadPessoa.Location = new System.Drawing.Point(265, 273);
+            this.btCadPessoa.Name = "btCadPessoa";
+            this.btCadPessoa.Size = new System.Drawing.Size(149, 74);
+            this.btCadPessoa.TabIndex = 2;
+            this.btCadPessoa.Text = "Cadastrar Pessoa";
+            this.btCadPessoa.UseVisualStyleBackColor = true;
+            this.btCadPessoa.Click += new System.EventHandler(this.btCadPessoa_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 468);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCadPessoa);
+            this.Controls.Add(this.btCadCachorro);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -74,7 +87,8 @@ namespace ProjetoCanil
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btCadCachorro;
+        private System.Windows.Forms.Button btCadPessoa;
     }
 }
 

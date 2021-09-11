@@ -157,6 +157,7 @@ namespace ProjetoCanil.View
             this.tBIDPai.Name = "tBIDPai";
             this.tBIDPai.Size = new System.Drawing.Size(52, 23);
             this.tBIDPai.TabIndex = 11;
+            this.tBIDPai.Leave += new System.EventHandler(this.tBIDPai_Leave);
             // 
             // label7
             // 
@@ -190,6 +191,7 @@ namespace ProjetoCanil.View
             this.tBIDMae.Name = "tBIDMae";
             this.tBIDMae.Size = new System.Drawing.Size(52, 23);
             this.tBIDMae.TabIndex = 15;
+            this.tBIDMae.Leave += new System.EventHandler(this.tBIDMae_Leave);
             // 
             // label9
             // 
@@ -204,7 +206,7 @@ namespace ProjetoCanil.View
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvar.Location = new System.Drawing.Point(399, 345);
+            this.btnSalvar.Location = new System.Drawing.Point(397, 345);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(119, 40);
             this.btnSalvar.TabIndex = 18;
@@ -227,7 +229,7 @@ namespace ProjetoCanil.View
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Red;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.Location = new System.Drawing.Point(54, 345);
+            this.btnExcluir.Location = new System.Drawing.Point(53, 345);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(119, 40);
             this.btnExcluir.TabIndex = 20;

@@ -65,7 +65,7 @@ namespace ProjetoCanil.DAO
                     Query += " '" + cachorro.DataNasc + "', ";
                     Query += " '" + cachorro.Pedigree + "'); ";
 
-                    MessageBox.Show(Query);
+                    // MessageBox.Show(Query);
 
                     //VALUES(000001, null, null, 000001, 'Fred', '21/03/2018', '12345678');
 
@@ -82,10 +82,6 @@ namespace ProjetoCanil.DAO
                 return false;
                 throw;
             }
-
-
-
-
         }
     }
 

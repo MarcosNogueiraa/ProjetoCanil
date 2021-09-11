@@ -91,5 +91,24 @@ namespace ProjetoCanil.View
             DAOPessoa dAOPessoa = new DAOPessoa();
             tBNomeDono.Text = dAOPessoa.GetNomePessoaPorID(int.Parse(tBIDDono.Text != "" ? tBIDDono.Text : "0"));
         }
+
+        private void tBIDPai_Leave(object sender, EventArgs e)
+        {
+            DAOCachorro dAOCachorro = new DAOCachorro();
+            tBNomePai.Text = dAOCachorro.GetNomeCachorroPorID(int.Parse(tBIDPai.Text != "" ? tBIDPai.Text : "0"));
+        }
+
+        private void tBIDMae_Leave(object sender, EventArgs e)
+        {
+            DAOCachorro dAOCachorro = new DAOCachorro();
+            tBNomeMae.Text = dAOCachorro.GetNomeCachorroPorID(int.Parse(tBIDMae.Text != "" ? tBIDMae.Text : "0"));
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
