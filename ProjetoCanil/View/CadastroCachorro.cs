@@ -64,7 +64,6 @@ namespace ProjetoCanil.View
             DAOCachorro daocachorro = new DAOCachorro();
             Cachorro cachorro = new Cachorro();
 
-            cachorro.IDCachorro = int.Parse(tBIDCachorro.Text);
             cachorro.IDDono = int.Parse(tBIDDono.Text != "" ? tBIDDono.Text : "0" );
             cachorro.Nome = tBNomeCachorro.Text;
             cachorro.IDPai = int.Parse(tBIDPai.Text != "" ? tBIDPai.Text : "0");
@@ -79,10 +78,6 @@ namespace ProjetoCanil.View
         public Boolean ValidaCampos()
         {
             bool ret = true;
-
-
-
-
             return ret;
         }
 
@@ -109,6 +104,9 @@ namespace ProjetoCanil.View
 
         }
 
-       
+        private void tBIDDono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

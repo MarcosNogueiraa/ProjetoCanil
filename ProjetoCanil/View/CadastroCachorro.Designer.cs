@@ -78,6 +78,7 @@ namespace ProjetoCanil.View
             // 
             this.tBIDCachorro.Location = new System.Drawing.Point(33, 71);
             this.tBIDCachorro.Name = "tBIDCachorro";
+            this.tBIDCachorro.ReadOnly = true;
             this.tBIDCachorro.Size = new System.Drawing.Size(52, 23);
             this.tBIDCachorro.TabIndex = 2;
             // 
@@ -240,6 +241,7 @@ namespace ProjetoCanil.View
             // 
             this.tBNomeDono.Location = new System.Drawing.Point(114, 126);
             this.tBNomeDono.Name = "tBNomeDono";
+            this.tBNomeDono.ReadOnly = true;
             this.tBNomeDono.Size = new System.Drawing.Size(151, 23);
             this.tBNomeDono.TabIndex = 24;
             // 
@@ -258,6 +260,7 @@ namespace ProjetoCanil.View
             this.tBIDDono.Name = "tBIDDono";
             this.tBIDDono.Size = new System.Drawing.Size(52, 23);
             this.tBIDDono.TabIndex = 22;
+            this.tBIDDono.TextChanged += new System.EventHandler(this.tBIDDono_TextChanged);
             this.tBIDDono.Leave += new System.EventHandler(this.tBIDDono_Leave);
             // 
             // label11

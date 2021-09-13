@@ -7,6 +7,9 @@
     <Compile Update="View\CadastroPessoa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -33,13 +33,23 @@ namespace ProjetoCanil
         private void button1_Click(object sender, EventArgs e)
         {
             CadastroCachorro cadastroCachorro = new CadastroCachorro();
+            DAOCachorro dAOCachorro = new DAOCachorro();
             cadastroCachorro.ShowDialog();
+            
         }
 
         private void btCadPessoa_Click(object sender, EventArgs e)
         {
-            CadastroPessoa cadastroPessoa= new CadastroPessoa();
+            CadastroPessoa cadastroPessoa = new CadastroPessoa();
             cadastroPessoa.ShowDialog();
+            //cadastroPessoa.Activate();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            CadastroVenda cadastroVenda = new CadastroVenda();
+            cadastroVenda.ShowDialog();
         }
     }
 }

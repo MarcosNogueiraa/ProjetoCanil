@@ -29,16 +29,13 @@ namespace ProjetoCanil.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.mTBCPF = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tBNomePessoa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tBIDPessoa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.mTBRG = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.mTBCEP = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tBRua = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,56 +46,59 @@ namespace ProjetoCanil.View
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.tBCPF = new System.Windows.Forms.TextBox();
+            this.tBRG = new System.Windows.Forms.TextBox();
+            this.tBCEP = new System.Windows.Forms.TextBox();
+            this.tBCelular = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // mTBCPF
-            // 
-            this.mTBCPF.Location = new System.Drawing.Point(307, 81);
-            this.mTBCPF.Mask = "000,000,000-00";
-            this.mTBCPF.Name = "mTBCPF";
-            this.mTBCPF.Size = new System.Drawing.Size(100, 23);
-            this.mTBCPF.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(307, 63);
+            this.label4.Location = new System.Drawing.Point(299, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 15);
+            this.label4.Size = new System.Drawing.Size(135, 15);
             this.label4.TabIndex = 14;
-            this.label4.Text = "CPF";
+            this.label4.Text = "CPF (somente números)";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tBNomePessoa
             // 
-            this.tBNomePessoa.Location = new System.Drawing.Point(127, 81);
+            this.tBNomePessoa.Location = new System.Drawing.Point(123, 81);
             this.tBNomePessoa.Name = "tBNomePessoa";
             this.tBNomePessoa.Size = new System.Drawing.Size(151, 23);
             this.tBNomePessoa.TabIndex = 13;
+            this.tBNomePessoa.TextChanged += new System.EventHandler(this.tBNomePessoa_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(127, 63);
+            this.label3.Location = new System.Drawing.Point(123, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 12;
             this.label3.Text = "Nome";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tBIDPessoa
             // 
-            this.tBIDPessoa.Location = new System.Drawing.Point(46, 81);
+            this.tBIDPessoa.Location = new System.Drawing.Point(45, 81);
             this.tBIDPessoa.Name = "tBIDPessoa";
+            this.tBIDPessoa.ReadOnly = true;
             this.tBIDPessoa.Size = new System.Drawing.Size(52, 23);
             this.tBIDPessoa.TabIndex = 11;
+            this.tBIDPessoa.TextChanged += new System.EventHandler(this.tBIDPessoa_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 63);
+            this.label2.Location = new System.Drawing.Point(45, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(18, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "ID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lbTitulo
             // 
@@ -110,38 +110,20 @@ namespace ProjetoCanil.View
             this.lbTitulo.TabIndex = 16;
             this.lbTitulo.Text = "Cadastro de Pessoa";
             // 
-            // mTBRG
-            // 
-            this.mTBRG.Location = new System.Drawing.Point(437, 81);
-            this.mTBRG.Mask = "00,000,000-0";
-            this.mTBRG.Name = "mTBRG";
-            this.mTBRG.Size = new System.Drawing.Size(100, 23);
-            this.mTBRG.TabIndex = 18;
-            this.mTBRG.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(437, 63);
+            this.label1.Location = new System.Drawing.Point(459, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(22, 15);
+            this.label1.Size = new System.Drawing.Size(129, 15);
             this.label1.TabIndex = 17;
-            this.label1.Text = "RG";
+            this.label1.Text = "RG (somente números)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // mTBCEP
-            // 
-            this.mTBCEP.Location = new System.Drawing.Point(46, 152);
-            this.mTBCEP.Mask = "00000-999";
-            this.mTBCEP.Name = "mTBCEP";
-            this.mTBCEP.Size = new System.Drawing.Size(100, 23);
-            this.mTBCEP.TabIndex = 20;
-            this.mTBCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 134);
+            this.label5.Location = new System.Drawing.Point(214, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 15);
             this.label5.TabIndex = 19;
@@ -167,7 +149,7 @@ namespace ProjetoCanil.View
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(295, 195);
+            this.label7.Location = new System.Drawing.Point(266, 195);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 15);
             this.label7.TabIndex = 23;
@@ -176,7 +158,7 @@ namespace ProjetoCanil.View
             // 
             // tBNumCasa
             // 
-            this.tBNumCasa.Location = new System.Drawing.Point(295, 213);
+            this.tBNumCasa.Location = new System.Drawing.Point(266, 213);
             this.tBNumCasa.Name = "tBNumCasa";
             this.tBNumCasa.Size = new System.Drawing.Size(53, 23);
             this.tBNumCasa.TabIndex = 24;
@@ -184,15 +166,15 @@ namespace ProjetoCanil.View
             // 
             // tBBairro
             // 
-            this.tBBairro.Location = new System.Drawing.Point(190, 152);
+            this.tBBairro.Location = new System.Drawing.Point(358, 152);
             this.tBBairro.Name = "tBBairro";
-            this.tBBairro.Size = new System.Drawing.Size(217, 23);
+            this.tBBairro.Size = new System.Drawing.Size(201, 23);
             this.tBBairro.TabIndex = 26;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(190, 134);
+            this.label8.Location = new System.Drawing.Point(358, 134);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 15);
             this.label8.TabIndex = 25;
@@ -233,11 +215,57 @@ namespace ProjetoCanil.View
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // tBCPF
+            // 
+            this.tBCPF.Location = new System.Drawing.Point(299, 81);
+            this.tBCPF.Name = "tBCPF";
+            this.tBCPF.Size = new System.Drawing.Size(135, 23);
+            this.tBCPF.TabIndex = 30;
+            this.tBCPF.TextChanged += new System.EventHandler(this.tBCPF_TextChanged);
+            // 
+            // tBRG
+            // 
+            this.tBRG.Location = new System.Drawing.Point(459, 81);
+            this.tBRG.Name = "tBRG";
+            this.tBRG.Size = new System.Drawing.Size(100, 23);
+            this.tBRG.TabIndex = 31;
+            this.tBRG.TextChanged += new System.EventHandler(this.tBRG_TextChanged);
+            // 
+            // tBCEP
+            // 
+            this.tBCEP.Location = new System.Drawing.Point(214, 152);
+            this.tBCEP.Name = "tBCEP";
+            this.tBCEP.Size = new System.Drawing.Size(105, 23);
+            this.tBCEP.TabIndex = 32;
+            // 
+            // tBCelular
+            // 
+            this.tBCelular.Location = new System.Drawing.Point(45, 152);
+            this.tBCelular.Name = "tBCelular";
+            this.tBCelular.Size = new System.Drawing.Size(121, 23);
+            this.tBCelular.TabIndex = 34;
+            this.tBCelular.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 134);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 15);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Celular";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
             // CadastroPessoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 450);
+            this.ClientSize = new System.Drawing.Size(600, 450);
+            this.Controls.Add(this.tBCelular);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tBCEP);
+            this.Controls.Add(this.tBRG);
+            this.Controls.Add(this.tBCPF);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
@@ -247,12 +275,9 @@ namespace ProjetoCanil.View
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tBRua);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.mTBCEP);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.mTBRG);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTitulo);
-            this.Controls.Add(this.mTBCPF);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tBNomePessoa);
             this.Controls.Add(this.label3);
@@ -266,17 +291,13 @@ namespace ProjetoCanil.View
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox mTBCPF;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tBNomePessoa;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tBIDPessoa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.MaskedTextBox mTBRG;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox mTBCEP;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tBRua;
         private System.Windows.Forms.Label label6;
@@ -287,5 +308,10 @@ namespace ProjetoCanil.View
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox tBCPF;
+        private System.Windows.Forms.TextBox tBRG;
+        private System.Windows.Forms.TextBox tBCEP;
+        private System.Windows.Forms.TextBox tBCelular;
+        private System.Windows.Forms.Label label9;
     }
 }

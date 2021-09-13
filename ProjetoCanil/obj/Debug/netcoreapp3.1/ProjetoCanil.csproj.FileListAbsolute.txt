@@ -30,3 +30,4 @@ C:\Projetos\ProjetoCanil\ProjetoCanil\bin\Debug\netcoreapp3.1\runtimes\win\lib\n
 C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.csproj.CopyComplete
 C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.View.CadastroCachorro.resources
 C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.View.CadastroPessoa.resources
+C:\Projetos\ProjetoCanil\ProjetoCanil\obj\Debug\netcoreapp3.1\ProjetoCanil.View.CadastroVenda.resources

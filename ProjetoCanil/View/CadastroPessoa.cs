@@ -53,22 +53,67 @@ namespace ProjetoCanil.View
             DAOPessoa dAOPessoa = new DAOPessoa();
             Pessoa pessoa = new Pessoa();
 
-            pessoa.IDPessoa = int.Parse(tBIDPessoa.Text);
-            pessoa.Nome = tBNomePessoa.Text;
-            mTBCPF.Text.Replace("-", "");
-            mTBCPF.Text.Replace(".", "");
-            pessoa.CPF = int.Parse(mTBCPF.Text != "" ? mTBCPF.Text : "0");
-          //  pessoa.IDMae = int.Parse(tBIDMae.Text != "" ? tBIDMae.Text : "0");
-            //pessoa.DataNasc = DateTime.Parse(mTBDataNasc.Text);
-           // pessoa.Pedigree = tBPedigree.Text;
+            pessoa.Nome = tBNomePessoa.Text.Trim();
+            pessoa.CPF = int.Parse(tBCPF.Text.Trim() != "" ? tBCPF.Text.Trim() : "0");
+            pessoa.RG = int.Parse(tBRG.Text.Trim() != "" ? tBRG.Text.Trim() : "0");
+            pessoa.Celular = int.Parse(tBCelular.Text.Trim() != "" ? tBCelular.Text.Trim() : "0");
+            pessoa.CEP = int.Parse(tBCEP.Text.Trim() != "" ? tBCEP.Text.Trim() : "0");
+            pessoa.Bairro = tBBairro.Text.Trim();
+            pessoa.Rua = tBRua.Text.Trim();
+            pessoa.NumeroCasa = int.Parse(tBNumCasa.Text.Trim() != "" ? tBNumCasa.Text.Trim() : "0"); ;
 
             if (dAOPessoa.CadastraPessoa(pessoa))
-                MessageBox.Show("Pessoa cadastrado com sucesso");
+                MessageBox.Show("Pessoa cadastrada com sucesso");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(mTBCPF.Text.Replace("-||.", ""));//+ " INT: " + int.Parse(mTBCPF.Text));
+            MessageBox.Show(tBCPF.Text + " " + tBRG.Text + " " + tBCEP.Text);//+ " INT: " + int.Parse(mTBCPF.Text));
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBIDPessoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBNomePessoa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBCPF_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tBRG_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

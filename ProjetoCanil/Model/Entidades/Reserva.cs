@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ProjetoCanil.Model.Entidades
 {
-    class Reserva
+    public class Reserva
     {
+        public int IDReserva { get; set; }
+        public int IDCachorro { get; set; }
+        public int IDComprador { get; set; }
+        public double ValorAdiantamento { get; set; }
     }
 }
