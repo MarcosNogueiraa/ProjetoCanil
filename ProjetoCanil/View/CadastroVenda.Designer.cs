@@ -29,7 +29,7 @@ namespace ProjetoCanil.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExcluir = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroVenda));
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,24 +57,20 @@ namespace ProjetoCanil.View
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tBValorTotal = new System.Windows.Forms.TextBox();
+            this.DGReservas = new System.Windows.Forms.DataGridView();
+            this.colIDVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeDono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeCachorro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnNovo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGReservas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.Red;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.Location = new System.Drawing.Point(62, 308);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(119, 40);
-            this.btnExcluir.TabIndex = 23;
-            this.btnExcluir.Text = "EXCLUIR";
-            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.Location = new System.Drawing.Point(234, 308);
+            this.btnEditar.Location = new System.Drawing.Point(244, 361);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(119, 40);
             this.btnEditar.TabIndex = 22;
@@ -86,7 +82,7 @@ namespace ProjetoCanil.View
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvar.Location = new System.Drawing.Point(406, 308);
+            this.btnSalvar.Location = new System.Drawing.Point(418, 361);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(119, 40);
             this.btnSalvar.TabIndex = 21;
@@ -187,7 +183,7 @@ namespace ProjetoCanil.View
             this.tBNomeCachorro.Location = new System.Drawing.Point(367, 80);
             this.tBNomeCachorro.Name = "tBNomeCachorro";
             this.tBNomeCachorro.ReadOnly = true;
-            this.tBNomeCachorro.Size = new System.Drawing.Size(161, 23);
+            this.tBNomeCachorro.Size = new System.Drawing.Size(207, 23);
             this.tBNomeCachorro.TabIndex = 34;
             // 
             // label5
@@ -219,7 +215,7 @@ namespace ProjetoCanil.View
             // 
             // btGetDataAtual
             // 
-            this.btGetDataAtual.Location = new System.Drawing.Point(147, 193);
+            this.btGetDataAtual.Location = new System.Drawing.Point(124, 194);
             this.btGetDataAtual.Name = "btGetDataAtual";
             this.btGetDataAtual.Size = new System.Drawing.Size(75, 23);
             this.btGetDataAtual.TabIndex = 39;
@@ -238,7 +234,7 @@ namespace ProjetoCanil.View
             // 
             // tBValorCompra
             // 
-            this.tBValorCompra.Location = new System.Drawing.Point(446, 194);
+            this.tBValorCompra.Location = new System.Drawing.Point(240, 257);
             this.tBValorCompra.Name = "tBValorCompra";
             this.tBValorCompra.Size = new System.Drawing.Size(82, 23);
             this.tBValorCompra.TabIndex = 41;
@@ -247,7 +243,7 @@ namespace ProjetoCanil.View
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(446, 175);
+            this.label7.Location = new System.Drawing.Point(236, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 15);
             this.label7.TabIndex = 42;
@@ -257,7 +253,7 @@ namespace ProjetoCanil.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(411, 194);
+            this.label8.Location = new System.Drawing.Point(205, 257);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 21);
             this.label8.TabIndex = 43;
@@ -268,7 +264,7 @@ namespace ProjetoCanil.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(266, 194);
+            this.label9.Location = new System.Drawing.Point(41, 257);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 21);
             this.label9.TabIndex = 46;
@@ -277,7 +273,7 @@ namespace ProjetoCanil.View
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(301, 176);
+            this.label12.Location = new System.Drawing.Point(76, 239);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 15);
             this.label12.TabIndex = 45;
@@ -285,7 +281,7 @@ namespace ProjetoCanil.View
             // 
             // tBValorPago
             // 
-            this.tBValorPago.Location = new System.Drawing.Point(301, 194);
+            this.tBValorPago.Location = new System.Drawing.Point(76, 257);
             this.tBValorPago.Name = "tBValorPago";
             this.tBValorPago.ReadOnly = true;
             this.tBValorPago.Size = new System.Drawing.Size(82, 23);
@@ -295,7 +291,7 @@ namespace ProjetoCanil.View
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(342, 247);
+            this.label13.Location = new System.Drawing.Point(117, 310);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(29, 21);
             this.label13.TabIndex = 49;
@@ -304,7 +300,7 @@ namespace ProjetoCanil.View
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(377, 228);
+            this.label14.Location = new System.Drawing.Point(163, 292);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(61, 15);
             this.label14.TabIndex = 48;
@@ -312,16 +308,79 @@ namespace ProjetoCanil.View
             // 
             // tBValorTotal
             // 
-            this.tBValorTotal.Location = new System.Drawing.Point(377, 247);
+            this.tBValorTotal.Location = new System.Drawing.Point(152, 310);
             this.tBValorTotal.Name = "tBValorTotal";
             this.tBValorTotal.Size = new System.Drawing.Size(82, 23);
             this.tBValorTotal.TabIndex = 47;
+            // 
+            // DGReservas
+            // 
+            this.DGReservas.AllowUserToOrderColumns = true;
+            this.DGReservas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGReservas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDVenda,
+            this.colNomeDono,
+            this.colNomeCachorro});
+            this.DGReservas.Location = new System.Drawing.Point(344, 161);
+            this.DGReservas.MultiSelect = false;
+            this.DGReservas.Name = "DGReservas";
+            this.DGReservas.RowHeadersWidth = 20;
+            this.DGReservas.RowTemplate.Height = 25;
+            this.DGReservas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGReservas.Size = new System.Drawing.Size(230, 170);
+            this.DGReservas.TabIndex = 50;
+            this.DGReservas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGReservas_CellClick);
+            this.DGReservas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colIDVenda
+            // 
+            this.colIDVenda.HeaderText = "ID";
+            this.colIDVenda.Name = "colIDVenda";
+            this.colIDVenda.ReadOnly = true;
+            this.colIDVenda.Width = 50;
+            // 
+            // colNomeDono
+            // 
+            this.colNomeDono.HeaderText = "Nome Comprador";
+            this.colNomeDono.Name = "colNomeDono";
+            this.colNomeDono.ReadOnly = true;
+            // 
+            // colNomeCachorro
+            // 
+            this.colNomeCachorro.HeaderText = "Nome Cachorro";
+            this.colNomeCachorro.Name = "colNomeCachorro";
+            this.colNomeCachorro.ReadOnly = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(351, 126);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(217, 30);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "CONSULTA RESERVAS";
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.DimGray;
+            this.btnNovo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNovo.Location = new System.Drawing.Point(70, 361);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(119, 40);
+            this.btnNovo.TabIndex = 52;
+            this.btnNovo.Text = "NOVO";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // CadastroVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 450);
+            this.ClientSize = new System.Drawing.Size(607, 450);
+            this.Controls.Add(this.btnNovo);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.DGReservas);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tBValorTotal);
@@ -347,19 +406,19 @@ namespace ProjetoCanil.View
             this.Controls.Add(this.tBIDVenda);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnSalvar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroVenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroVenda";
+            ((System.ComponentModel.ISupportInitialize)(this.DGReservas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label1;
@@ -387,5 +446,11 @@ namespace ProjetoCanil.View
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tBValorTotal;
+        private System.Windows.Forms.DataGridView DGReservas;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnNovo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeDono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeCachorro;
     }
 }

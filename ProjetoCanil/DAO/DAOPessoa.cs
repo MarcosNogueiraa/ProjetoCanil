@@ -42,7 +42,7 @@ namespace ProjetoCanil.DAO
             }
         }
 
-        public Boolean CadastraPessoa(Pessoa pessoa)
+        public bool CadastraPessoa(Pessoa pessoa)
         {
             try
             {

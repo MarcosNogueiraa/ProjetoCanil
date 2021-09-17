@@ -47,7 +47,7 @@ namespace ProjetoCanil.DAO
             }
         }
 
-        public Boolean CadastraVenda(Venda venda)
+        public bool CadastraVenda(Venda venda)
         {
             try
             {
@@ -73,14 +73,20 @@ namespace ProjetoCanil.DAO
                     Query += "  SET IDDono = '" + venda.IDPessoa + "' ";
                     Query += "      WHERE IDCachorro = '" + venda.IDCachorro + "' ;";
 
-                    //MessageBox.Show(Query);
 
-                    //VALUES(000001, null, null, 000001, 'Fred', '21/03/2018', '12345678');
+                    //if (venda.IDReserva != 0)
+                    // {
+                    //        Query += " DELETE FROM RESERVA ";
+                    //        Query += " WHERE IDReserva = '" + venda.IDReserva + "' ;";
+                    //}
+                        //MessageBox.Show(Query);
 
-                    using (SqlCommand command = new SqlCommand(Query, connection))
-                    {
-                        SqlDataReader odbcDataReader = command.ExecuteReader();
-                    }
+                        //VALUES(000001, null, null, 000001, 'Fred', '21/03/2018', '12345678');
+
+                        using (SqlCommand command = new SqlCommand(Query, connection))
+                        {
+                            SqlDataReader odbcDataReader = command.ExecuteReader();
+                        }
                 }
                 return true;
 

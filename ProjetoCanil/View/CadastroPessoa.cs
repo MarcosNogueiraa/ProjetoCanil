@@ -1,4 +1,5 @@
-﻿using ProjetoCanil.DAO;
+﻿using ProjetoCanil.Controller;
+using ProjetoCanil.DAO;
 using ProjetoCanil.Model.Entidades;
 using System;
 using System.Collections.Generic;
@@ -50,20 +51,22 @@ namespace ProjetoCanil.View
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             //validaCampos();
-            DAOPessoa dAOPessoa = new DAOPessoa();
+            //DAOPessoa dAOPessoa = new DAOPessoa();
+            PessoaController pessoaController = new PessoaController();
             Pessoa pessoa = new Pessoa();
 
             pessoa.Nome = tBNomePessoa.Text.Trim();
-            pessoa.CPF = int.Parse(tBCPF.Text.Trim() != "" ? tBCPF.Text.Trim() : "0");
-            pessoa.RG = int.Parse(tBRG.Text.Trim() != "" ? tBRG.Text.Trim() : "0");
-            pessoa.Celular = int.Parse(tBCelular.Text.Trim() != "" ? tBCelular.Text.Trim() : "0");
-            pessoa.CEP = int.Parse(tBCEP.Text.Trim() != "" ? tBCEP.Text.Trim() : "0");
+            pessoa.CPF = tBCPF.Text.Trim() ;
+            pessoa.RG = tBRG.Text.Trim();
+            pessoa.Celular = tBCelular.Text.Trim(); ;
+            pessoa.CEP = tBCEP.Text.Trim();
             pessoa.Bairro = tBBairro.Text.Trim();
             pessoa.Rua = tBRua.Text.Trim();
             pessoa.NumeroCasa = int.Parse(tBNumCasa.Text.Trim() != "" ? tBNumCasa.Text.Trim() : "0"); ;
 
-            if (dAOPessoa.CadastraPessoa(pessoa))
-                MessageBox.Show("Pessoa cadastrada com sucesso");
+            pessoaController.CadastraPessoa(pessoa);
+            //if (dAOPessoa.CadastraPessoa(pessoa))
+            //    MessageBox.Show("Pessoa cadastrada com sucesso");
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

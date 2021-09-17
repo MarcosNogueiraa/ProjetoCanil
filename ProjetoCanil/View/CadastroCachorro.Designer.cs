@@ -29,6 +29,7 @@ namespace ProjetoCanil.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCachorro));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tBIDCachorro = new System.Windows.Forms.TextBox();
@@ -53,6 +54,11 @@ namespace ProjetoCanil.View
             this.label10 = new System.Windows.Forms.Label();
             this.tBIDDono = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.DGCachorros = new System.Windows.Forms.DataGridView();
+            this.colIDCachorro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNomeCachorro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btNovo = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DGCachorros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -207,7 +213,7 @@ namespace ProjetoCanil.View
             // 
             this.btnSalvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvar.Location = new System.Drawing.Point(397, 345);
+            this.btnSalvar.Location = new System.Drawing.Point(397, 358);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(119, 40);
             this.btnSalvar.TabIndex = 18;
@@ -219,23 +225,25 @@ namespace ProjetoCanil.View
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.Location = new System.Drawing.Point(225, 345);
+            this.btnEditar.Location = new System.Drawing.Point(225, 358);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(119, 40);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.Red;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.Location = new System.Drawing.Point(53, 345);
+            this.btnExcluir.Location = new System.Drawing.Point(53, 358);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(119, 40);
             this.btnExcluir.TabIndex = 20;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // tBNomeDono
             // 
@@ -272,11 +280,53 @@ namespace ProjetoCanil.View
             this.label11.TabIndex = 21;
             this.label11.Text = "ID Dono";
             // 
+            // DGCachorros
+            // 
+            this.DGCachorros.AllowUserToOrderColumns = true;
+            this.DGCachorros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGCachorros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDCachorro,
+            this.colNomeCachorro});
+            this.DGCachorros.Location = new System.Drawing.Point(294, 108);
+            this.DGCachorros.MultiSelect = false;
+            this.DGCachorros.Name = "DGCachorros";
+            this.DGCachorros.RowTemplate.Height = 25;
+            this.DGCachorros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGCachorros.Size = new System.Drawing.Size(237, 171);
+            this.DGCachorros.TabIndex = 25;
+            this.DGCachorros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGCachorros_CellClick);
+            this.DGCachorros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // colIDCachorro
+            // 
+            this.colIDCachorro.HeaderText = "IDCachorro";
+            this.colIDCachorro.Name = "colIDCachorro";
+            this.colIDCachorro.ReadOnly = true;
+            // 
+            // colNomeCachorro
+            // 
+            this.colNomeCachorro.HeaderText = "Nome";
+            this.colNomeCachorro.Name = "colNomeCachorro";
+            // 
+            // btNovo
+            // 
+            this.btNovo.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.btNovo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btNovo.Location = new System.Drawing.Point(225, 303);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(119, 40);
+            this.btNovo.TabIndex = 26;
+            this.btNovo.Text = "NOVO";
+            this.btNovo.UseVisualStyleBackColor = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
+            // 
             // CadastroCachorro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 445);
+            this.Controls.Add(this.btNovo);
+            this.Controls.Add(this.DGCachorros);
             this.Controls.Add(this.tBNomeDono);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tBIDDono);
@@ -301,8 +351,11 @@ namespace ProjetoCanil.View
             this.Controls.Add(this.tBIDCachorro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroCachorro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroCachorro";
+            ((System.ComponentModel.ISupportInitialize)(this.DGCachorros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +387,9 @@ namespace ProjetoCanil.View
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tBIDDono;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView DGCachorros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCachorro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNomeCachorro;
+        private System.Windows.Forms.Button btNovo;
     }
 }

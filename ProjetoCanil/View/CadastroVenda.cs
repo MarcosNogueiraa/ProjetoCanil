@@ -1,4 +1,5 @@
-﻿using ProjetoCanil.DAO;
+﻿using ProjetoCanil.Controller;
+using ProjetoCanil.DAO;
 using ProjetoCanil.Model.Entidades;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace ProjetoCanil.View
         public CadastroVenda()
         {
             InitializeComponent();
+            AtualizaGrid();
             //TODO Pergunta se venda é referente á um cachorro já reservado
 
         }
@@ -44,9 +46,9 @@ namespace ProjetoCanil.View
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //validaCampos();
-            
-            DAOVenda daovenda= new DAOVenda();
+            //validaCampos();            
+            //DAOVenda daovenda= new DAOVenda();
+            VendaController vendaController = new VendaController();
             Venda venda = new Venda();
 
             venda.IDCachorro = int.Parse(tBIDCachorro.Text);
@@ -58,8 +60,10 @@ namespace ProjetoCanil.View
             venda.DataCompra = Convert.ToDateTime(mTBDataCompra.Text);
             venda.Valor = int.Parse(tBIDCachorro.Text);
 
-            if (daovenda.CadastraVenda(venda))
-                MessageBox.Show("Venda realizada com sucesso");
+            vendaController.CadastraVenda(venda);
+            AtualizaGrid();
+
+           
             
         }
 
@@ -111,7 +115,97 @@ namespace ProjetoCanil.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(mTBDataCompra.Text.Replace("/", ""));
+            LiberaCamposEdicao();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void AtualizaGrid()
+        {
+            DGReservas.Rows.Clear();
+            ReservaController reservaController= new ReservaController();
+            PessoaController pessoaController = new PessoaController();
+            CachorroController cachorroController = new CachorroController();
+
+            List<Reserva> ListaReserva = reservaController.GetReservas();
+
+            foreach (Reserva reserva in ListaReserva)
+            {
+                DGReservas.Rows.Add(reserva.IDReserva, 
+                                    pessoaController.GetNomePessoaPorID(reserva.IDComprador),
+                                    cachorroController.GetNomeCachorroPorID(reserva.IDCachorro));
+            }
+        }
+
+        private void PreencheCamposPorReservaSelecionada(Reserva reserva)
+        {           
+           
+            tBIDReserva.Text = reserva.IDReserva.ToString();
+            tBIDCachorro.Text = reserva.IDCachorro.ToString();
+            tBNomeCachorro.Text = getNomeCachorro(reserva.IDCachorro);
+            tBIDComprador.Text = reserva.IDComprador.ToString();
+            tBNomeComprador.Text = getNomeDono(reserva.IDComprador);
+            tBValorPago.Text = reserva.ValorAdiantamento.ToString();
+            double ValorTotal = double.Parse(tBValorPago.Text) + double.Parse(tBValorCompra.Text != "" ? tBValorCompra.Text : "0");
+            tBValorTotal.Text = ValorTotal.ToString();
+                  
+        }
+
+        private void LimpaCampos()
+        {
+            tBIDVenda.Text = "";
+            tBIDReserva.Text = "";
+            tBIDCachorro.Text = "";
+            tBNomeCachorro.Text = "";
+            tBIDComprador.Text = "";
+            tBNomeComprador.Text = "";
+            mTBDataCompra.Text = "";
+            tBValorPago.Text = "";
+            tBValorCompra.Text = "";
+            tBValorTotal.Text = "";
+        }
+
+        private void LiberaCamposEdicao()
+        {
+            tBIDReserva.ReadOnly = false;;
+            tBIDCachorro.ReadOnly = false;;
+            tBIDComprador.ReadOnly = false;;
+            mTBDataCompra.ReadOnly = false;
+            tBValorCompra.ReadOnly = false;;
+            tBValorTotal.ReadOnly = false;;
+        }
+
+        private void TravaCampos()
+        {
+            tBIDReserva.ReadOnly = true; ;
+            tBIDCachorro.ReadOnly = true; ;
+            tBIDComprador.ReadOnly = true; ;
+            mTBDataCompra.ReadOnly = true;
+            tBValorCompra.ReadOnly = true; ;
+            tBValorTotal.ReadOnly = true; ;
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            LimpaCampos();
+            LiberaCamposEdicao();
+        }
+
+        private void DGReservas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGReservas.CurrentRow.Cells[0].Value != null)
+            {
+                ReservaController reservaController = new ReservaController();
+                Reserva reserva = reservaController.GetReservaPorID(int.Parse(DGReservas.CurrentRow.Cells[0].Value.ToString()));
+
+                TravaCampos();
+                PreencheCamposPorReservaSelecionada(reserva);
+            }
+            else
+                LimpaCampos();
         }
     }
 }

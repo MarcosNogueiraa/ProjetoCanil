@@ -29,6 +29,7 @@ namespace ProjetoCanil.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroPessoa));
             this.label4 = new System.Windows.Forms.Label();
             this.tBNomePessoa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -283,7 +284,9 @@ namespace ProjetoCanil.View
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tBIDPessoa);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadastroPessoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CadastroPessoa";
             this.ResumeLayout(false);
             this.PerformLayout();

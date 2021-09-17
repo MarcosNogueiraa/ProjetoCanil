@@ -78,7 +78,44 @@ namespace ProjetoCanil.DAO
             }
         }
 
-        public Boolean CadastraReserva(Reserva reserva)
+        public List<Reserva> GetReservas()
+        {
+            List<Reserva> ListaReserva = new List<Reserva>();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+                    string Query = "SELECT * FROM RESERVA ";
+                    Query += "WHERE IDReserva NOT IN(SELECT ISNULL(IDReserva,0) FROM VENDA) ";
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        SqlDataReader odbcDataReader = command.ExecuteReader();
+
+                        while (odbcDataReader.Read())
+                        {
+                            Reserva reserva = new Reserva();
+                             
+                            reserva.IDReserva = Convert.ToInt32(odbcDataReader["IDReserva"]);
+                            reserva.IDCachorro = Convert.ToInt32(odbcDataReader["IDCachorro"]);
+                            reserva.IDComprador = Convert.ToInt32(odbcDataReader["IDPessoa"]);
+                            reserva.ValorAdiantamento = Convert.ToDouble(odbcDataReader["ValorAdiantamento"]);
+                            
+                            ListaReserva.Add(reserva);
+                        }
+
+                        return ListaReserva;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public bool CadastraReserva(Reserva reserva)
         {
             try
             {
